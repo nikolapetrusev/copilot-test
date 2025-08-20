@@ -225,7 +225,6 @@ class EgyptianSlotMachine {
             this.hideWinMessage();
         }, 3000);
     }
-    }
     
     hideWinMessage() {
         const message = document.getElementById('winMessage');
