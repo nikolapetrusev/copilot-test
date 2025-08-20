@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharaoh's Fortune - Egyptian Slots</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <div class="header-top">
+                <h1>🏺 Pharaoh's Fortune 🏺</h1>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle night mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+            <div class="coin-display">
+                <span class="coin-icon">🪙</span>
+                <span id="coinCount">1000</span> Gold Coins
+            </div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="machine-frame">
+                <canvas id="slotsCanvas" width="600" height="400"></canvas>
+                <div class="paylines-overlay">
+                    <div class="payline" id="payline1"></div>
+                    <div class="payline" id="payline2"></div>
+                    <div class="payline" id="payline3"></div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <div class="bet-info">
+                    <span>Bet: 10 coins per spin</span>
+                </div>
+                <button id="spinButton" class="spin-btn">
+                    <span class="btn-text">SPIN</span>
+                    <span class="btn-cost">(-10 coins)</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="paytable">
+            <h3>🏆 Paytable 🏆</h3>
+            <div class="paytable-grid">
+                <div class="payout-item" data-symbol="🔱">
+                    <span class="symbols">🔱 🔱 🔱</span>
+                    <span class="payout">500 coins</span>
+                </div>
+                <div class="payout-item" data-symbol="👁️">
+                    <span class="symbols">👁️ 👁️ 👁️</span>
+                    <span class="payout">300 coins</span>
+                </div>
+                <div class="payout-item" data-symbol="🐍">
+                    <span class="symbols">🐍 🐍 🐍</span>
+                    <span class="payout">200 coins</span>
+                </div>
+                <div class="payout-item" data-symbol="🏺">
+                    <span class="symbols">🏺 🏺 🏺</span>
+                    <span class="payout">150 coins</span>
+                </div>
+                <div class="payout-item" data-symbol="⚱️">
+                    <span class="symbols">⚱️ ⚱️ ⚱️</span>
+                    <span class="payout">100 coins</span>
+                </div>
+                <div class="payout-item" data-symbol="💎">
+                    <span class="symbols">💎 💎 💎</span>
+                    <span class="payout">80 coins</span>
+                </div>
+                <div class="payout-item" data-symbol="🪙">
+                    <span class="symbols">🪙 🪙 🪙</span>
+                    <span class="payout">50 coins</span>
+                </div>
+                <div class="payout-item" data-symbol="two-kind">
+                    <span class="symbols">Any 2 matching</span>
+                    <span class="payout">20 coins</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="message-area">
+            <div id="winMessage" class="win-message"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
