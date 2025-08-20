@@ -217,6 +217,9 @@ class EgyptianSlotMachine {
         // Highlight winning combinations in the paytable
         this.highlightWinningCombinations();
         
+        // Trigger confetti animation
+        this.createConfetti();
+        
         setTimeout(() => {
             this.hideWinMessage();
         }, 3000);
@@ -409,6 +412,38 @@ class EgyptianSlotMachine {
         
         this.draw();
         requestAnimationFrame(() => this.gameLoop());
+    }
+    
+    createConfetti() {
+        // Egyptian-themed confetti symbols
+        const confettiSymbols = ['🎉', '✨', '🪙', '💎', '👑', '⭐', '🎊'];
+        const confettiCount = 30;
+        
+        for (let i = 0; i < confettiCount; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.textContent = confettiSymbols[Math.floor(Math.random() * confettiSymbols.length)];
+            
+            // Random horizontal position
+            confetti.style.left = Math.random() * 100 + '%';
+            
+            // Random horizontal drift
+            const drift = (Math.random() - 0.5) * 200 + 'px';
+            confetti.style.setProperty('--drift', drift);
+            
+            // Add slight variation in animation timing
+            confetti.style.animationDelay = Math.random() * 0.5 + 's';
+            confetti.style.animationDuration = (2.5 + Math.random() * 1) + 's';
+            
+            document.body.appendChild(confetti);
+            
+            // Remove confetti after animation
+            setTimeout(() => {
+                if (confetti.parentNode) {
+                    confetti.parentNode.removeChild(confetti);
+                }
+            }, 4000);
+        }
     }
 }
 
