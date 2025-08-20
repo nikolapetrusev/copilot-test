@@ -414,6 +414,10 @@ class EgyptianSlotMachine {
         requestAnimationFrame(() => this.gameLoop());
     }
     
+    /**
+     * Creates and animates confetti particles with Egyptian-themed symbols when the user wins.
+     * Generates 30 falling particles with random positioning, rotation, and drift effects.
+     */
     createConfetti() {
         // Egyptian-themed confetti symbols
         const confettiSymbols = ['🎉', '✨', '🪙', '💎', '👑', '⭐', '🎊'];
