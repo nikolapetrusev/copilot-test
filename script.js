@@ -204,6 +204,7 @@ class EgyptianSlotMachine {
     }
     
     showWin(amount, winningLines) {
+        console.log("INFO: player has won");
         const message = document.getElementById('winMessage');
         message.textContent = `🎉 You won ${amount} coins! 🎉`;
         message.classList.add('show');
@@ -223,6 +224,7 @@ class EgyptianSlotMachine {
         setTimeout(() => {
             this.hideWinMessage();
         }, 3000);
+    }
     }
     
     hideWinMessage() {
@@ -455,3 +457,4 @@ class EgyptianSlotMachine {
 window.addEventListener('load', () => {
     new EgyptianSlotMachine();
 });
+
